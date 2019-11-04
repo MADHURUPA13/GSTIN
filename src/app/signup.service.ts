@@ -11,6 +11,9 @@ export class SignupService {
   getSignup() {
     return this.ht.get("http://localhost:3000/signup");
   }
+  getUserRole(){
+    return this.ht.get('http://192.168.2.94:8089/gst/customer/getRole');
+  }
 
   postLoginDetails(login: any) {
 

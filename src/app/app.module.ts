@@ -10,7 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Dashboard01Component } from './dashboard01/dashboard01.component';
 import { ToastrModule } from 'ng6-toastr-notifications';
-import {MatSidenavModule} from'@angular/material/sidenav';
+import { MatSidenavModule} from'@angular/material/sidenav';
 import{
 MatButtonModule,
 MatButtonToggleModule,

@@ -34,7 +34,7 @@
                         </div> 
                     </div>
 
-                             <div class="form-group col-lg-12">
+                    <div class="form-group col-lg-12">
                         <input type="text" formControlName="email" name="email" placeholder="enter email"
                             class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
                         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
@@ -42,7 +42,17 @@
                             <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
                         </div>
                     </div>
-                    </div>
+                    <!-- <div class="form-group col-lg-12" *ngFor="let rName of userRole"> -->
+                            <!-- <input type="radio" formControlName="roleName" name="roleName" placeholder="enter UserRole"
+                                [ngClass]="{ 'is-invalid': submitted && f.roleName.errors }" />  -->
+                            <!-- <input [value]='rName.roleId' type="radio" name="rName" [(ngModel)]="rName.roleName"> -->
+                            <!-- <div *ngIf="submitted && f.roleName.errors" class="invalid-feedback">
+                                <div *ngIf="f.roleName.errors.required">User Role is required</div>
+                                <div *ngIf="f.roleName.errors.roleName">User Role must be a valid email address</div>
+                            </div> -->
+                    <!-- </div>
+                    {{userRole}} -->
+                </div>
                 <br>
 
                 <button type="submit" class="btn btn-danger col-lg-12">Register</button><br><br>
@@ -51,6 +61,7 @@
             </form>
         </div>
     </div>
-</div>
+    </div>
 
-<br><br>
+
+

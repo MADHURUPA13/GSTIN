@@ -16,6 +16,7 @@ export class SignupComponent implements OnInit {
   submitted: boolean = false;
   toekn1: string;
   regOnj: any;
+  userRole:any;
   constructor(
     private formBuilder: FormBuilder, 
     private sign: SignupService, 
@@ -39,6 +40,10 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
     this.toekn1 = localStorage.getItem('token');
+    // this.sign.getUserRole().subscribe((res:any)=>{
+    //   this.userRole = res;
+    //   console.log(this.userRole,"userrole");
+    // })
   }
 
   get f() { return this.registerForm.controls; }
@@ -55,10 +60,14 @@ export class SignupComponent implements OnInit {
 
     this.sign.postRegisterDetails(data).subscribe(
      (resp: any) => {
-        console.log(resp)
-        this.toastr.successToastr(resp.message, 'Success');
-        this.r.navigate(['/login']);
-      }
+        console.log(resp);
+        if(resp.message == 'Success' ){
+          this.toastr.successToastr(resp.message, 'Success');
+          this.r.navigate(['/login']);
+        }
+      },error => {
+        this.toastr.warningToastr(error.error.message, 'Error');
+      },
       )
      //alert("your are successfully registered your account")
 

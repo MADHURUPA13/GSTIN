@@ -1,21 +1,29 @@
-<div class="container">
-    <div class="row">
-        <div class="col-lg-6 mx-auto">
+
+
+
+
+
+
+
+
+
+  
             <h1 style="text-align:center">LOGIN</h1>
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="loginForm" >
                 <div class="form-row">
-                    <div class="form-group col">
+                    <div class="form-group ">
                         <div class="form-group">
                             <label>username</label>
                             <input type="text" formControlName="username" name="username" placeholder="enter username"
-                                class="form-control" [ngClass]="{ 'is-invalid':submitted && f.username.errors }" />
+                                class="form-control" [ngClass]="{ 'is-invalid':submitted && f.username.errors }"/>
                             <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                                 <div *ngIf="f.username.errors.required">username is required</div>
                                 <div *ngIf="f.username.errors.username">username must be a valid username address</div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col">
+                      
+                        <!-- <div class="form-row col"> -->
+                            <div class="form-group">
                                 <label>Password</label>
                                 <div class="row">
                                     <input type="{{val}}" formControlName="password" style="width:90%;margin-left:17px"
@@ -31,22 +39,19 @@
                                             be at least 6 characters</div>
                                     </div>
                                 </div>
+                            
                             </div>
-                        </div>
+                  
                     </div>
                 </div>
-
-
-                <span class="psw" style="display:block;text-align:right"> <a routerLink="/forgot">Forgot
-                        password?</a></span><br>
-                <button type="submit" class="btn btn-danger col-lg-12">Sign-in</button><br><br>
             </form>
+
+            <span class="psw" style="display:block;text-align:right"> <a routerLink="/signin">Register</a></span><br>
+            <button type="type" class="btn btn-danger " (click)="onSubmit()">Sign-in</button><br><br>
         
             
-<!--            
-            <button type="submit" class="btn col-lg-12" style="border-color:red;color:red;" routerLink="/signup">CREATE
-                AN ACCOUNT</button><br><br><br> -->
 
-        </div>
-    </div>
-</div>
+
+  
+    
+
