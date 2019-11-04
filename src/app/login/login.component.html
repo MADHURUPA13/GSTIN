@@ -1,17 +1,9 @@
 
-
-
-
-
-
-
-
-
-  
-            <h1 style="text-align:center">LOGIN</h1>
+<!-- 
+ <h1 style="text-align:center">LOGIN</h1>
             <form [formGroup]="loginForm" >
                 <div class="form-row">
-                    <div class="form-group ">
+                    <div class="form-group col">
                         <div class="form-group">
                             <label>username</label>
                             <input type="text" formControlName="username" name="username" placeholder="enter username"
@@ -22,8 +14,8 @@
                             </div>
                         </div>
                       
-                        <!-- <div class="form-row col"> -->
-                            <div class="form-group">
+                            <div class="form-group col">
+
                                 <label>Password</label>
                                 <div class="row">
                                     <input type="{{val}}" formControlName="password" style="width:90%;margin-left:17px"
@@ -44,10 +36,55 @@
                   
                     </div>
                 </div>
-            </form>
+            </form> -->
 
-            <span class="psw" style="display:block;text-align:right"> <a routerLink="/signin">Register</a></span><br>
-            <button type="type" class="btn btn-danger " (click)="onSubmit()">Sign-in</button><br><br>
+
+
+
+
+
+<div class="container-fluid">
+
+
+    <div class="row">
+
+    
+    <div class="container ">
+            <h2>Login</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group col-6">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group col-6">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Sign-in</button>
+        <a routerLink="/signin" class="btn btn-link">Register</a>
+    </div>
+</form>
+</div>
+
+
+<div class="container">
+
+
+
+</div>
+
+</div>
+</div>
+
+            <!-- <span class="psw" style="display:block;text-align:right"> <a routerLink="/signin">Register</a></span><br>
+            <button type="type" class="btn btn-danger " (click)="onSubmit()">Sign-in</button><br><br> -->
         
             
 
