@@ -49,8 +49,8 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("token",this.token)
       localStorage.setItem( "user",this.user)
       console.log(this.token);
-       this.r.navigate(['/menu']);
-      // this.r.navigate(['/dashboard']);
+     //  this.r.navigate(['/menu']);
+       this.r.navigate(['/dashboard01']);
       
       // console.log(this.user);
       

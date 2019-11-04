@@ -10,13 +10,25 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Dashboard01Component } from './dashboard01/dashboard01.component';
 import { ToastrModule } from 'ng6-toastr-notifications';
+import {MatSidenavModule} from'@angular/material/sidenav';
+import{
+MatButtonModule,
+MatButtonToggleModule,
+MatIconModule,
+MatProgressSpinnerModule,
+MatToolbarModule
+} from'@angular/material';
+import { User1Component } from './user1/user1.component'
+
+
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     LoginComponent,
     DashboardComponent,
-    Dashboard01Component
+    Dashboard01Component,
+    User1Component
   ],
   imports: [
     BrowserModule,
@@ -25,7 +37,13 @@ import { ToastrModule } from 'ng6-toastr-notifications';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    MatButtonModule,
+  MatButtonToggleModule,
+  MatIconModule,
+  MatProgressSpinnerModule,
+  MatToolbarModule,
+  MatSidenavModule,
+  ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

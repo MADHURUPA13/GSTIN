@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard01.component.css']
 })
 export class Dashboard01Component implements OnInit {
-
+  opened = true;
   constructor() { }
 
   ngOnInit() {
+  }
+  logout(){
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
   }
 
 }
