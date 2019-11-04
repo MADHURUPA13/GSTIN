@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            <h1 style="text-align:center">Create Your Account</h1><br>
+            <form [formGroup]="registerForm" (ngSubmit)="onsubmit()">
+                <div class="form-row">
+                   <div class="form-group col-lg-12">
+                        <input type="text" formControlName="organizationName" name="organizationName" class="form-control"
+                              placeholder="organizationName" [ngClass]="{ 'is-invalid':submitted && f.organizationName.errors }" />
+                          <div *ngIf="submitted &&f.organizationName.errors" class="invalid-feedback">
+                              <div *ngIf="f.organizationName.errors.required">First Name is required</div>
+                          </div>
+                      </div>
+                   
+                    <div class="form-group col-lg-12 ">
+
+                        <input type="text" formControlName="mobile" name="mobile" class="form-control"
+                            placeholder="Mobile Number" [ngClass]="{ 'is-invalid':submitted && f.mobile.errors }" />
+                        <div *ngIf=" submitted  && f.mobile.errors" class="invalid-feedback">
+                            <div *ngIf="f.mobile.errors.required">Mobile number is required</div>
+                            <div *ngIf="f.mobile.errors.minlength">Number must be at least 10 characters</div>
+                            <div *ngIf="f.mobile.errors.pattern">should only contain numbers</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-lg-12 ">
+
+                        <input type="text" formControlName="gstn" name="gstn" class="form-control"
+                            placeholder="gstNumm Number" [ngClass]="{ 'is-invalid':submitted && f.gstn.errors }" />
+                         <div *ngIf="submitted  && f.gstn.errors" class="invalid-feedback">
+                            <div *ngIf="f.gstn.errors.required">gstin number is required</div>
+                            <div *ngIf="f.gstn.errors.minlength">4 alphabets 9 digits</div>
+                            <div *ngIf="f.gstn.errors.pattern">required gstn patterns</div>
+                        </div> 
+                    </div>
+
+                             <div class="form-group col-lg-12">
+                        <input type="text" formControlName="email" name="email" placeholder="enter email"
+                            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+                    </div>
+                <br>
+
+                <button type="submit" class="btn btn-danger col-lg-12">Register</button><br><br>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<br><br>

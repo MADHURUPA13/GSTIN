@@ -1,0 +1,76 @@
+{
+  "login": [
+    {
+      "email": "madhu.a@ojas-it.com",
+      "password": "Madhu@123",
+      "id": 1
+    }
+  ],
+  "signup": [
+    {
+      "firstname": "madhu",
+      "lastname": "A",
+      "mobile": "9876543214",
+      "email": "madhu.a@ojas-it.com",
+      "password": "Madhu@123",
+      "id": 1
+    },
+    {
+      "firstname": "jkjhs",
+      "lastname": "gdfg",
+      "mobile": "8765543395",
+      "email": "dfbgd@gmail.com",
+      "password": "Lahari@143",
+      "id": 2
+    },
+    {
+      "firstname": "jfdj",
+      "lastname": "dfgdfg",
+      "mobile": "9874783644",
+      "email": "lah@gamil.com",
+      "password": "fdgdfg",
+      "id": 3
+    },
+    {
+      "firstname": "fghfgh",
+      "lastname": "fghfgh",
+      "mobile": "677464645454",
+      "email": "vgcg@gmail.com",
+      "password": "hgdyugd",
+      "id": 4
+    },
+    {
+      "firstname": "lahari",
+      "lastname": "A",
+      "mobile": "7896543256",
+      "email": "lahari@gmail.com",
+      "password": "sdyuftsft",
+      "id": 5
+    },
+    {
+      "firstname": "okj",
+      "lastname": "ghg",
+      "mobile": "9876543218",
+      "email": "dfgdg@gmail.com",
+      "password": "asdasd",
+      "id": 6
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

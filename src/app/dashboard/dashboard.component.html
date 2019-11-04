@@ -1,0 +1,105 @@
+<div class="container-fluid p-0 pt-5">
+
+
+
+    <div class="container pt-5">
+
+
+        <p>
+            File Returns
+        </p>
+
+        <hr>
+
+        <form [formGroup]="GstForm" (ngSubmit)="onSubmit()" class="needs-validation pt-2">
+
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="inputState">GST Statment/Returns</label>
+                    <select id="inputState" class="form-control" formControlName="returns" name="returns" required [ngClass]="{ 'is-invalid':submitted && f.returns.errors }">
+                       <option selected>-----------</option>
+                        <option >GSTR1</option>
+                        <option>GSTR2</option>
+                    </select>
+
+                    <div *ngIf="submitted && f.returns.errors" class="invalid-feedback">
+                            <div *ngIf="f.returns.errors.required">returns is required</div>
+                            <div *ngIf="f.returns.errors.returns">returns must be a valid returns address</div>
+                        </div>
+               
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationTooltip02"> GSTIN of Supplier</label>
+                    <input  type="text" formControlName="suppiler" name="suppiler" class="form-control" placeholder="Last name"
+                        value="Otto" required [ngClass]="{ 'is-invalid':submitted && f.suppiler.errors }">
+                        <div *ngIf="submitted && f.suppiler.errors" class="invalid-feedback">
+                                <div *ngIf="f.suppiler.errors.required">suppiler is required</div>
+                                <div *ngIf="f.suppiler.errors.suppiler">suppiler must be a valid suppiler address</div>
+                            </div>
+                   
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationTooltipsuppiler">Financial Year</label>
+                    <select id="inputState" class="form-control"  formControlName="financialYear" name="financialYear" required [ngClass]="{ 'is-invalid':submitted && f.financialYear.errors }">
+                        <option selected>2019-2020</option>
+                        <option>2018-2019</option>
+                    </select>
+                    <div *ngIf="submitted && f.financialYear.errors" class="invalid-feedback">
+                            <div *ngIf="f.financialYear.errors.required">financialYear is required</div>
+                            <div *ngIf="f.financialYear.errors.financialYear">financialYear must be a valid financialYear address</div>
+                        </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationTooltip03">Tax Period</label>
+                    <select id="inputState"  formControlName="TaxPeriod" name="TaxPeriod" placeholder="enter TaxPeriod"
+                    class="form-control" [ngClass]="{ 'is-invalid':submitted && f.TaxPeriod.errors }" >
+                        <option selected>Nov</option>
+                        <option>Oct</option>
+                    </select>
+                    <div *ngIf="submitted && f.TaxPeriod.errors" class="invalid-feedback">
+                            <div *ngIf="f.TaxPeriod.errors.required">TaxPeriod is required</div>
+                            <div *ngIf="f.TaxPeriod.errors.TaxPeriod">TaxPeriod must be a valid TaxPeriod address</div>
+                        </div>
+                </div>
+
+
+            </div>
+
+            <div>
+                   
+                <label>Is SEZ Taxpayer ?</label>
+
+                <div class="custom-control custom-radio custom-control-inline ml-3">
+                    <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline1">Yes</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline2">No</label>
+                </div>
+                
+            </div>
+            <!-- <button class="btn btn-primary" type="submit">Submit form</button> -->
+            <div class="float-right">
+
+                    <button type="button" class="btn btn-light btn-md text-uppercase">Back</button>&nbsp;
+                    <button type="submit" class="btn btn-primary btn-md  text-uppercase">Proceed</button>
+
+            </div>
+            
+        </form>
+
+
+
+
+    
+ </div>
+
+
+
+
+
+
+</div>

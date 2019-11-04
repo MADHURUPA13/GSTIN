@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            <h1 style="text-align:center">LOGIN</h1>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-row">
+                    <div class="form-group col">
+                        <div class="form-group">
+                            <label>username</label>
+                            <input type="text" formControlName="username" name="username" placeholder="enter username"
+                                class="form-control" [ngClass]="{ 'is-invalid':submitted && f.username.errors }" />
+                            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                <div *ngIf="f.username.errors.required">username is required</div>
+                                <div *ngIf="f.username.errors.username">username must be a valid username address</div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label>Password</label>
+                                <div class="row">
+                                    <input type="{{val}}" formControlName="password" style="width:90%;margin-left:17px"
+                                        placeholder="enter password" name="pass" class="form-control"
+                                        [ngClass]="{ 'is-invalid':submitted  && f.password.errors }">
+                                    <i [ngClass]="['bttn']"><i *ngIf="eye1" (click)="eye()" style="margin-top:10px"
+                                            class="fa fa-eye"></i><i (click)="eyes()" *ngIf="eye2"
+                                            style="margin-top:10px" class="fa fa-eye-slash"></i></i>
+                                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                        <div style="margin-left:17px" *ngIf="f.password.errors.required">Password is
+                                            required</div>
+                                        <div style="margin-left:17px" *ngIf="f.password.errors.minlength">Password must
+                                            be at least 6 characters</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <span class="psw" style="display:block;text-align:right"> <a routerLink="/forgot">Forgot
+                        password?</a></span><br>
+                <button type="submit" class="btn btn-danger col-lg-12">Sign-in</button><br><br>
+            </form>
+        
+            
+<!--            
+            <button type="submit" class="btn col-lg-12" style="border-color:red;color:red;" routerLink="/signup">CREATE
+                AN ACCOUNT</button><br><br><br> -->
+
+        </div>
+    </div>
+</div>
